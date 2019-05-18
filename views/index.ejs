@@ -1,0 +1,44 @@
+<% include header %>
+  <div class="notes-container">
+    <div class="new-entry-container">
+      <div class="title-container">
+        <div class="new-entry-title" contenteditable="true">Title</div>
+        <div class="pin"><img src="images/outline-bookmark_border-24px.svg"></div>
+      </div>
+      <div class="new-entry-body-container">
+        <div class="new-entry-text" contenteditable="true">
+          Take a note...</div>
+        <div class="new-entry-bottom-container">
+          <div class="bottom-icons-container">
+            <img src="images/outline-add_alert-24px.svg">
+            <img src="images/outline-person_add-24px.svg">
+            <img src="images/baseline-palette-24px.svg">
+            <img src="images/baseline-image-24px.svg">
+            <img src="images/baseline-archive-24px.svg">
+            <img src="images/outline-more_vert-24px.svg">
+            <img src="images/outline-undo-24px.svg">
+            <img src="images/outline-redo-24px.svg">
+          </div>
+          <div class="close" id="new-entry-close">Close</div>
+        </div>
+      </div>
+    </div>
+    <div id="pinned-start"></div>
+    <section class="notes-section-container">
+      <a href = "#"></a>
+      <div class="col">
+        <% notes.forEach( (note, i) => { %>
+          <% if(true) { %>
+              <div class="note note<%= i %>" id="<%= note._id%>"><div class="title" contenteditable="true"><%= note.title %></div>
+              <div class="noteBody" contenteditable="true"><%= note.note %></div>
+              </div>
+          <% } %>
+        <% }) %>
+      </div>
+    </section>
+  </div>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+  <script src="scripts/scripts.js"></script>
+  <script src="scripts/post.js"></script>
+  </body>
+</html>
